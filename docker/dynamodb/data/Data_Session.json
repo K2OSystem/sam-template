@@ -1,0 +1,44 @@
+{
+    "Session": [
+        {"PutRequest": { "Item": {
+            "session_id": {"S" : "12345678901"},
+            "email": {"S" : "email1@gmail.com"},
+            "expire": {"N" : "1720001000"},
+            "student_id": {"N" : "1"},
+            "access_url": {"S" : "1"},
+            "created": {"S" : "2020-09-02 00:00:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "session_id": {"S" : "12345678902"},
+            "email": {"S" : "email2@gmail.com"},
+            "expire": {"N" : "1720001000"},
+            "student_id": {"N" : "2"},
+            "access_url": {"N" : "1"},
+            "created": {"S" : "2020-09-02 00:00:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "session_id": {"S" : "12345678903"},
+            "email": {"S" : "email3@gmail.com"},
+            "expire": {"N" : "1720001000"},
+            "student_id": {"N" : "3"},
+            "access_url": {"S" : "1"},
+            "created": {"S" : "2020-09-02 00:00:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "session_id": {"S" : "12345678904"},
+            "email": {"S" : "student1-1@gmail.com"},
+            "expire": {"N" : "1720001000"},
+            "student_id": {"N" : "3"},
+            "access_url": {"S" : "1"},
+            "created": {"S" : "2020-09-02 00:00:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "session_id": {"S" : "12345678905"},
+            "email": {"S" : "student1-2@gmail.com"},
+            "expire": {"N" : "1720001000"},
+            "student_id": {"N" : "3"},
+            "access_url": {"S" : "1"},
+            "created": {"S" : "2020-09-02 00:00:00.0"}
+        }}}
+    ]
+}

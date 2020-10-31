@@ -1,0 +1,23 @@
+{
+    "PreStudent": [
+        {"PutRequest": { "Item": {
+            "access_token": {"S" : "token_student1"},
+            "company_id": {"N" : "1"},
+            "email": {"S" : "student1-1@gmail.com"},
+            "token_expire": {"N" : "1610250703"}
+        }}}
+        ,{"PutRequest": { "Item": {
+            "access_token": {"S" : "token_student2"},
+            "company_id": {"N" : "1"},
+            "email": {"S" : "student1-2@gmail.com"},
+            "token_expire": {"N" : "1610250703"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "access_token": {"S" : "token_student3"},
+            "company_id": {"N" : "1"},
+            "email": {"S" : "student1-3@gmail.com"},
+            "token_expire": {"N" : "1610250703"}
+        }}}
+
+    ]
+}

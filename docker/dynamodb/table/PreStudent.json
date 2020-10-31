@@ -1,0 +1,10 @@
+{
+  "TableName": "PreStudent",
+  "AttributeDefinitions": [
+      { "AttributeName": "access_token", "AttributeType": "S" }
+  ],
+  "KeySchema": [
+      { "AttributeName": "access_token", "KeyType": "HASH" }
+  ],
+  "ProvisionedThroughput": { "WriteCapacityUnits": 1, "ReadCapacityUnits": 1 }
+}

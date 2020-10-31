@@ -1,0 +1,125 @@
+{
+    "Company": [
+        {"PutRequest": { "Item": {
+            "id": {"N" : "1"},
+            "code": {"S" : "code 1"},
+            "access_url": {"S" : "1"},
+            "name": {"S" : "name 1"},
+            "limit_count": {"N" : "15"},
+            "take_start": {"S" : "2020-09-02 00:00:00.0"},
+            "take_end": {"S" : "2021-12-03 00:00:00.0"},
+            "created": {"S" : "2020-09-05 00:00:00.0"},
+            "updated": {"S" : "2020-09-06 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "id": {"N" : "2"},
+            "code": {"S" : "code 2"},
+            "access_url": {"S" : "2"},
+            "name": {"S" : "name 2"},
+            "limit_count": {"N" : "0"},
+            "take_start": {"S" : "2020-09-02 00:00:00.0"},
+            "take_end": {"S" : "2021-12-03 00:00:00.0"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "id": {"N" : "3"},
+            "code": {"S" : "code 3"},
+            "access_url": {"S" : "3"},
+            "name": {"S" : "name 3"},
+            "limit_count": {"N" : "10"},
+            "take_start": {"S" : "2020-09-02 00:00:00.0"},
+            "take_end": {"S" : "2021-12-03 00:00:00.0"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "id": {"N" : "4"},
+            "code": {"S" : "code 4"},
+            "access_url": {"S" : "4"},
+            "name": {"S" : "name 4"},
+            "limit_count": {"N" : "10"},
+            "take_start": {"S" : "2020-09-02 00:00:00.0"},
+            "take_end": {"S" : "2021-12-03 00:00:00.0"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "id": {"N" : "5"},
+            "code": {"S" : "code 5"},
+            "access_url": {"S" : "5"},
+            "name": {"S" : "name 5"},
+            "limit_count": {"N" : "10"},
+            "take_start": {"S" : "2020-09-02 00:00"},
+            "take_end": {"S" : "2020-09-03 00:00"},
+            "created": {"S" : "2020-09-02 00:00"},
+            "updated": {"S" : "2020-09-02 19:59"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "id": {"N" : "6"},
+            "code": {"S" : "code 6"},
+            "access_url": {"S" : "6"},
+            "name": {"S" : "name 6"},
+            "limit_count": {"N" : "10"},
+            "take_start": {"S" : "2020-09-02 00:00:00.0"},
+            "take_end": {"S" : "2021-12-03 00:00:00.0"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "id": {"N" : "7"},
+            "code": {"S" : "code 7"},
+            "access_url": {"S" : "7"},
+            "name": {"S" : "name 7"},
+            "limit_count": {"N" : "10"},
+            "take_start": {"S" : "2020-09-02 00:00:00.0"},
+            "take_end": {"S" : "2021-12-03 00:00:00.0"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "id": {"N" : "8"},
+            "code": {"S" : "code 8"},
+            "access_url": {"S" : "8"},
+            "name": {"S" : "name 8"},
+            "limit_count": {"N" : "10"},
+            "take_start": {"S" : "2020-09-02 00:00"},
+            "take_end": {"S" : "2020-09-03 00:00"},
+            "created": {"S" : "2020-09-02 00:00"},
+            "updated": {"S" : "2020-09-02 19:59"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "id": {"N" : "9"},
+            "code": {"S" : "code 9"},
+            "access_url": {"S" : "9"},
+            "name": {"S" : "name 9"},
+            "limit_count": {"N" : "10"},
+            "take_start": {"S" : "2020-09-02 00:00:00.0"},
+            "take_end": {"S" : "2021-12-03 00:00:00.0"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "id": {"N" : "10"},
+            "code": {"S" : "code 10"},
+            "access_url": {"S" : "10"},
+            "name": {"S" : "name 10"},
+            "limit_count": {"N" : "10"},
+            "take_start": {"S" : "2020-09-02 00:00:00.0"},
+            "take_end": {"S" : "2021-12-03 00:00:00.0"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "id": {"N" : "11"},
+            "code": {"S" : "code 11"},
+            "access_url": {"S" : "11"},
+            "name": {"S" : "name 11"},
+            "limit_count": {"N" : "10"},
+            "take_start": {"S" : "2020-09-02 00:00:00.0"},
+            "take_end": {"S" : "2021-12-03 00:00:00.0"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+    ]
+}

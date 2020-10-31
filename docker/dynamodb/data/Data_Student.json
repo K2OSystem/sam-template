@@ -1,0 +1,137 @@
+{
+    "Student": [
+        {"PutRequest": { "Item": {
+            "company_id": {"N" : "1"},
+            "email": {"S" : "student1-1@gmail.com"},
+            "id": {"N" : "1"},
+            "name": {"S" : "Student name 1-1"},
+            "serial_code": {"S" : "test-1"},
+            "employee_no": {"S" : "ID1234567890"},
+            "department_name": {"S": "department ABC"},
+            "score": {"N" : "999"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "company_id": {"N" : "1"},
+            "email": {"S" : "student1-2@gmail.com"},
+            "id": {"N" : "2"},
+            "name": {"S" : "Student name 1-2"},
+            "serial_code": {"S" : "test-2"},
+            "employee_no": {"S" : "ID1234567891"},
+            "department_name": {"S": "department ABC"},
+            "score": {"N" : "0"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "company_id": {"N" : "1"},
+            "email": {"S" : "student1-3@gmail.com"},
+            "id": {"N" : "3"},
+            "name": {"S" : "Student name 1-3"},
+            "serial_code": {"S" : "test-3"},
+            "employee_no": {"S" : "ID1234567892"},
+            "department_name": {"S": "department ABC"},
+            "score": {"N" : "999"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "company_id": {"N" : "1"},
+            "email": {"S" : "student1-4@gmail.com"},
+            "id": {"N" : "4"},
+            "name": {"S" : "Student name 1-4"},
+            "serial_code": {"S" : "test-4"},
+            "employee_no": {"S" : "ID1234567892"},
+            "department_name": {"S": "department ABC"},
+            "score": {"N" : "999"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "company_id": {"N" : "1"},
+            "email": {"S" : "student1-5@gmail.com"},
+            "id": {"N" : "5"},
+            "name": {"S" : "Student name 1-5"},
+            "serial_code": {"S" : "test-5"},
+            "employee_no": {"S" : "ID1234567892"},
+            "department_name": {"S": "department ABC"},
+            "score": {"N" : "999"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "company_id": {"N" : "1"},
+            "email": {"S" : "student1-6@gmail.com"},
+            "id": {"N" : "6"},
+            "name": {"S" : "Student name 1-6"},
+            "serial_code": {"S" : "test-6"},
+            "employee_no": {"S" : "ID1234567891"},
+            "department_name": {"S": "department ABC"},
+            "score": {"N" : "0"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "company_id": {"N" : "1"},
+            "email": {"S" : "student1-7@gmail.com"},
+            "id": {"N" : "7"},
+            "name": {"S" : "Student name 1-7"},
+            "serial_code": {"S" : "serial_code_1-7"},
+            "employee_no": {"S" : "ID1234567892"},
+            "department_name": {"S": "department ABC"},
+            "score": {"N" : "999"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "company_id": {"N" : "1"},
+            "email": {"S" : "student1-8@gmail.com"},
+            "id": {"N" : "8"},
+            "name": {"S" : "Student name 1-8"},
+            "serial_code": {"S" : "serial_code_1-8"},
+            "employee_no": {"S" : "ID1234567892"},
+            "department_name": {"S": "department ABC"},
+            "score": {"N" : "999"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "company_id": {"N" : "1"},
+            "email": {"S" : "student1-9@gmail.com"},
+            "id": {"N" : "9"},
+            "name": {"S" : "Student name 1-9"},
+            "name_v": {"S" : "Student name 1-9"},
+            "serial_code": {"S" : "serial_code_1-9"},
+            "employee_no": {"S" : "ID1234567892"},
+            "department_name": {"S": "department ABC"},
+            "score": {"N" : "999"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "company_id": {"N" : "2"},
+            "email": {"S" : "student2-1@gmail.com"},
+            "id": {"N" : "10"},
+            "name": {"S" : "Student name 2-1"},
+            "serial_code": {"S" : "serial_code_2-1"},
+            "employee_no": {"S" : "ID1234567892"},
+            "department_name": {"S": "department ABC"},
+            "score": {"N" : "999"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "company_id": {"N" : "1"},
+            "email": {"S" : "student1-10@gmail.com"},
+            "id": {"N" : "11"},
+            "name": {"S" : "Student name 1-10"},
+            "serial_code": {"S" : "serial_code_1-10"},
+            "employee_no": {"S" : "ID1234567892"},
+            "department_name": {"S": "department ABC"},
+            "score": {"N" : "999"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+    ]
+}

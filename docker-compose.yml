@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+  localstack:
+    container_name: localstack
+    image: localstack/localstack
+    ports:
+      - "8080:8080"
+      - "4566:4566"
+    environment:
+      - DEFAULT_REGION=ap-northeast-1
+      - DATA_DIR=${PWD}/localstack/data
+  dynamodb-admin:
+    container_name: dynamodb-admin
+    image: instructure/dynamo-local-admin
+    environment:
+      - DYNAMO_ENDPOINT=http://localstack:4566
+      - AWS_REGION=ap-northeast-1
+      - AWS_ACCESS_KEY_ID=ACCESS_ID
+      - AWS_SECRET_ACCESS_KEY=ACCESS_KEY
+    ports:
+      - 8001:8001
+    depends_on:
+      - localstack
+    tty: true
+
+volumes:
+  dynamodb_data:
+
+# https://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html

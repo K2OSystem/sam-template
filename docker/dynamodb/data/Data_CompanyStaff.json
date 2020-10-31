@@ -1,0 +1,54 @@
+{
+    "CompanyStaff": [
+        {"PutRequest": { "Item": {
+            "company_id": {"N" : "1"},
+            "email": {"S" : "email1@gmail.com"},
+            "name": {"S" : "staff name 1"},
+            "id": {"N" : "1"},
+            "access_token": {"S" : "token_staff1"},
+            "token_expire": {"N" : "1610250703"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "company_id": {"N" : "1"},
+            "email": {"S" : "email2@gmail.com"},
+            "name": {"S" : "staff name 2"},
+            "id": {"N" : "2"},
+            "access_token": {"S" : "token_staff2"},
+            "token_expire": {"N" : "1610250703"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "company_id": {"N" : "1"},
+            "email": {"S" : "email3@gmail.com"},
+            "name": {"S" : "staff name 3"},
+            "id": {"N" : "3"},
+            "access_token": {"S" : "token_staff3"},
+            "token_expire": {"N" : "1610250703"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "company_id": {"N" : "2"},
+            "email": {"S" : "email4@gmail.com"},
+            "name": {"S" : "staff name 4"},
+            "id": {"N" : "4"},
+            "access_token": {"S" : "token_staff4"},
+            "token_expire": {"N" : "1610250703"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "company_id": {"N" : "2"},
+            "email": {"S" : "email5@gmail.com"},
+            "name": {"S" : "staff name 5"},
+            "id": {"N" : "5"},
+            "access_token": {"S" : "token_staff5"},
+            "token_expire": {"N" : "1610250703"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+    ]
+}

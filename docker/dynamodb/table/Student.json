@@ -1,0 +1,12 @@
+{
+  "TableName": "Student",
+  "AttributeDefinitions": [
+    {"AttributeName": "email", "AttributeType": "S"},
+    {"AttributeName": "company_id", "AttributeType": "N"}
+],
+  "KeySchema": [
+    {"KeyType": "HASH", "AttributeName": "email"},
+    {"KeyType": "RANGE", "AttributeName": "company_id"}
+],
+  "ProvisionedThroughput": { "WriteCapacityUnits": 1, "ReadCapacityUnits": 1 }
+}

@@ -1,0 +1,10 @@
+{
+  "TableName": "Company",
+  "AttributeDefinitions": [
+      { "AttributeName": "id", "AttributeType": "N" }
+  ],
+  "KeySchema": [
+      { "AttributeName": "id", "KeyType": "HASH" }
+  ],
+  "ProvisionedThroughput": { "WriteCapacityUnits": 1, "ReadCapacityUnits": 1 }
+}

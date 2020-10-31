@@ -1,0 +1,12 @@
+{
+  "TableName": "CompanyDomain",
+  "AttributeDefinitions": [
+      {"AttributeName": "domain", "AttributeType": "S"},
+      {"AttributeName": "company_id", "AttributeType": "N"}
+  ],
+  "KeySchema": [
+      {"KeyType": "HASH", "AttributeName": "domain"},
+      {"KeyType": "RANGE", "AttributeName": "company_id"}
+  ],
+  "ProvisionedThroughput": { "WriteCapacityUnits": 1, "ReadCapacityUnits": 1 }
+}

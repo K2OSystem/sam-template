@@ -1,0 +1,39 @@
+{
+    "CompanyDomain": [
+        {"PutRequest": { "Item": {
+            "company_id": {"N" : "1"},
+            "domain": {"S" : "gmail.com"},
+            "id": {"N" : "1"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "company_id": {"N" : "1"},
+            "domain": {"S" : "yahoo.co.jp"},
+            "id": {"N" : "2"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "company_id": {"N" : "2"},
+            "domain": {"S" : "gmail.com"},
+            "id": {"N" : "3"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "company_id": {"N" : "1"},
+            "domain": {"S" : "yahoo.co.jp"},
+            "id": {"N" : "4"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+        ,{"PutRequest": {"Item": {
+            "company_id": {"N" : "2"},
+            "domain": {"S" : "yahoo.co.jp"},
+            "id": {"N" : "5"},
+            "created": {"S" : "2020-09-02 00:00:00.0"},
+            "updated": {"S" : "2020-09-02 19:59:00.0"}
+        }}}
+    ]
+}

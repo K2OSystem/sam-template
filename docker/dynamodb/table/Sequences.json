@@ -1,0 +1,10 @@
+{
+  "TableName": "Sequences",
+  "AttributeDefinitions": [
+      { "AttributeName": "table_name", "AttributeType": "S" }
+  ],
+  "KeySchema": [
+      { "AttributeName": "table_name", "KeyType": "HASH" }
+  ],
+  "ProvisionedThroughput": { "WriteCapacityUnits": 1, "ReadCapacityUnits": 1 }
+}

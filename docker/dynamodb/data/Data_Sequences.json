@@ -1,0 +1,9 @@
+{
+    "Sequences": [
+        {"PutRequest": { "Item": {"table_name": {"S" : "Company"},"seq": {"N" : "11"}}}}
+        ,{"PutRequest": { "Item": {"table_name": {"S" : "CompanyStaff"},"seq": {"N" : "5"}}}}
+        ,{"PutRequest": { "Item": {"table_name": {"S" : "CompanyDomain"},"seq": {"N" : "5"}}}}
+        ,{"PutRequest": { "Item": {"table_name": {"S" : "Student"},"seq": {"N" : "11"}}}}
+        ,{"PutRequest": { "Item": {"table_name": {"S" : "TestResult"},"seq": {"N" : "3"}}}}
+    ]
+}

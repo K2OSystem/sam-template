@@ -1,0 +1,274 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  sam-template
+
+  Sample SAM Template for sam-template
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 3
+    Runtime: python3.8
+    Environment:
+      Variables:
+        ENV: !Ref Env
+        ENDPOINT: !FindInMap [ EnvMap, !Ref Env, Endpoint ]
+    Layers:
+      - !Ref MyLayer
+
+Parameters:
+  Env:
+    Type: String
+    AllowedValues:
+      - prod
+      - stg
+      - dev
+      - local
+    Default: dev
+
+Mappings:
+  EnvMap:
+    prod:
+      Endpoint: ''
+    stg:
+      Endpoint: ''
+    dev:
+      Endpoint: ''
+    local:
+      Endpoint: 'http://host.docker.internal:4566'
+
+
+Resources:
+  # Lambda Layer
+  MyLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: serverless-backend-service
+      Description: "サーバレスアプリケーション共通処理"
+      ContentUri: service/
+      CompatibleRuntimes:
+        - python3.8
+    Metadata:
+      BuildMethod: python3.8
+
+
+  HelloWorldFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: hello_world/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Events:
+        HelloWorld:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /hello
+            Method: get
+
+
+  # DynamoDB
+  Company:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: Company
+      AttributeDefinitions: 
+        - AttributeName: id
+          AttributeType: N
+        - AttributeName: access_url
+          AttributeType: S
+      KeySchema: 
+        - AttributeName: id
+          KeyType: HASH
+      ProvisionedThroughput: 
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+      GlobalSecondaryIndexes:
+        - IndexName: access_url-index
+          KeySchema: 
+            - AttributeName: access_url
+              KeyType: HASH
+          Projection:
+            ProjectionType: ALL
+          ProvisionedThroughput: 
+            ReadCapacityUnits: 1
+            WriteCapacityUnits: 1
+
+  CompanyDomain:
+    Type: AWS::DynamoDB::Table
+    DependsOn: Company
+    Properties:
+      TableName: CompanyDomain
+      AttributeDefinitions: 
+        - AttributeName: domain
+          AttributeType: S
+        - AttributeName: company_id
+          AttributeType: N
+      KeySchema: 
+        - AttributeName: domain
+          KeyType: HASH
+        - AttributeName: "company_id"
+          KeyType: "RANGE"
+      ProvisionedThroughput: 
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+      GlobalSecondaryIndexes:
+        - IndexName: company_id-index
+          KeySchema: 
+            - AttributeName: company_id
+              KeyType: HASH
+          Projection:
+            ProjectionType: ALL
+          ProvisionedThroughput: 
+            ReadCapacityUnits: 1
+            WriteCapacityUnits: 1
+
+  CompanyStaff:
+    Type: AWS::DynamoDB::Table
+    DependsOn: CompanyDomain
+    Properties:
+      TableName: CompanyStaff
+      AttributeDefinitions: 
+        - AttributeName: email
+          AttributeType: S
+        - AttributeName: company_id
+          AttributeType: N
+        - AttributeName: access_token
+          AttributeType: S
+      KeySchema: 
+        - AttributeName: email
+          KeyType: HASH
+        - AttributeName: "company_id"
+          KeyType: "RANGE"
+      ProvisionedThroughput: 
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+      GlobalSecondaryIndexes:
+        - IndexName: company_id-index
+          KeySchema: 
+            - AttributeName: company_id
+              KeyType: HASH
+          Projection:
+            ProjectionType: ALL
+          ProvisionedThroughput: 
+            ReadCapacityUnits: 1
+            WriteCapacityUnits: 1
+        - IndexName: access_token-index
+          KeySchema: 
+            - AttributeName: access_token
+              KeyType: HASH
+            - AttributeName: company_id
+              KeyType: RANGE
+          Projection:
+            # ProjectionType: ALL
+            ProjectionType: INCLUDE
+            NonKeyAttributes: ["token_expire","id"]
+          ProvisionedThroughput: 
+            ReadCapacityUnits: 1
+            WriteCapacityUnits: 1
+
+  Student:
+    Type: AWS::DynamoDB::Table
+    DependsOn: CompanyStaff
+    Properties:
+      TableName: Student
+      AttributeDefinitions: 
+        - AttributeName: email
+          AttributeType: S
+        - AttributeName: company_id
+          AttributeType: N
+        - AttributeName: id
+          AttributeType: N
+      KeySchema: 
+        - AttributeName: email
+          KeyType: HASH
+        - AttributeName: "company_id"
+          KeyType: "RANGE"
+      ProvisionedThroughput: 
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+      GlobalSecondaryIndexes:
+        - IndexName: company_id-index
+          KeySchema: 
+            - AttributeName: company_id
+              KeyType: HASH
+          Projection:
+            ProjectionType: ALL
+          ProvisionedThroughput: 
+            ReadCapacityUnits: 1
+            WriteCapacityUnits: 1
+        - IndexName: company_id-id-index
+          KeySchema: 
+            - AttributeName: company_id
+              KeyType: HASH
+            - AttributeName: id
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+          ProvisionedThroughput: 
+            ReadCapacityUnits: 1
+            WriteCapacityUnits: 1
+
+  PreStudent:
+    Type: AWS::DynamoDB::Table
+    DependsOn: Student
+    Properties:
+      TableName: PreStudent
+      AttributeDefinitions: 
+        - AttributeName: access_token
+          AttributeType: S
+      KeySchema: 
+        - AttributeName: access_token
+          KeyType: HASH
+      ProvisionedThroughput: 
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+      TimeToLiveSpecification:
+        AttributeName: 'token_expire'
+        Enabled: true
+
+  Session:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: Session
+      AttributeDefinitions: 
+        - AttributeName: session_id
+          AttributeType: S
+      KeySchema: 
+        - AttributeName: session_id
+          KeyType: HASH
+      ProvisionedThroughput: 
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+      TimeToLiveSpecification:
+        AttributeName: 'expire'
+        Enabled: true
+
+  Sequences:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: Sequences
+      AttributeDefinitions: 
+        - AttributeName: table_name
+          AttributeType: S
+      KeySchema: 
+        - AttributeName: table_name
+          KeyType: HASH
+      ProvisionedThroughput: 
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+
+
+Outputs:
+  # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
+  # Find out more about other implicit resources you can reference within SAM
+  # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
+  HelloWorldApi:
+    Description: "API Gateway endpoint URL for Prod stage for Hello World function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/"
+  HelloWorldFunction:
+    Description: "Hello World Lambda Function ARN"
+    Value: !GetAtt HelloWorldFunction.Arn
+  HelloWorldFunctionIamRole:
+    Description: "Implicit IAM Role created for Hello World function"
+    Value: !GetAtt HelloWorldFunctionRole.Arn
